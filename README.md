@@ -119,14 +119,6 @@ ALCHEMY_API_KEY=your-alchemy-api-key
    └─ Visual privacy controls
 ```
 
-## 🔑 Key Features
-
-- **🛡️ Enterprise Security**: Magic's Trusted Execution Environment
-- **🔐 Private Key Revelation**: RSA-encrypted, secure key access
-- **👁️ Privacy Controls**: Blur sensitive data from onlookers
-- **⚡ Instant Wallets**: One-click wallet creation for authenticated users
-- **🌐 Production Ready**: Deployed on Vercel with full TypeScript support
-
 ---
 
 ## 📚 Learn More
