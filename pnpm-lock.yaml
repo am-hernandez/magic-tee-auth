@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@auth0/nextjs-auth0':
-        specifier: ^3.2.0
-        version: 3.8.0(next@15.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: 3.5.0
+        version: 3.5.0(next@15.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@supabase/supabase-js':
         specifier: ^2.45.4
         version: 2.53.0
@@ -23,6 +23,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      react-hot-toast:
+        specifier: ^2.5.2
+        version: 2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       viem:
         specifier: ^2.21.36
         version: 2.33.2(typescript@5.9.2)
@@ -64,11 +67,11 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
-  '@auth0/nextjs-auth0@3.8.0':
-    resolution: {integrity: sha512-xMzpkCuJAZ7tquJOZr7W4Jm9155EDotAACtdd9R9t4ATZgNGUzDQfPMogYJ2O14WB86sZSrp3rpJo4cspQYcSA==}
+  '@auth0/nextjs-auth0@3.5.0':
+    resolution: {integrity: sha512-uFZEE2QQf1zU+jRK2fwqxRQt+WSqDPYF2tnr7d6BEa7b6L6tpPJ3evzoImbWSY1a7gFdvD7RD/Rvrsx7B5CKVg==}
     engines: {node: '>=16'}
     peerDependencies:
-      next: ^10.0.0 || ^11.0.0 || ^12.3.5 || ^13.5.9 || ^14.2.25 || ^15.2.3
+      next: '>=10'
 
   '@emnapi/core@1.4.5':
     resolution: {integrity: sha512-XsLw1dEOpkSX/WucdqUhPWP7hDxSvZiY+fsUC14h+FtQ2Ifni4znbBt8punRX+Uj2JG/uDb8nEHVKvrVlvdZ5Q==}
@@ -771,8 +774,8 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  cookie@0.7.2:
-    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
+  cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
 
   cross-spawn@7.0.6:
@@ -1133,6 +1136,11 @@ packages:
   globalthis@1.0.4:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
     engines: {node: '>= 0.4'}
+
+  goober@2.1.16:
+    resolution: {integrity: sha512-erjk19y1U33+XAMe1VTvIONHYoSqE4iS7BYUZfHaqeohLmnC0FdxEh7rQU+6MZ4OajItzjZFSRtVANrQwNq6/g==}
+    peerDependencies:
+      csstype: ^3.0.10
 
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
@@ -1671,6 +1679,13 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
+  react-hot-toast@2.5.2:
+    resolution: {integrity: sha512-Tun3BbCxzmXXM7C+NI4qiv6lT0uwGh4oAfeJyNOjYUejTsm35mK9iCaYLGv8cBz9L5YxZLx/2ii7zsIwPtPUdw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -2063,10 +2078,10 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@auth0/nextjs-auth0@3.8.0(next@15.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@auth0/nextjs-auth0@3.5.0(next@15.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@panva/hkdf': 1.2.1
-      cookie: 0.7.2
+      cookie: 0.6.0
       debug: 4.4.1
       joi: 17.13.3
       jose: 4.15.9
@@ -2779,7 +2794,7 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  cookie@0.7.2: {}
+  cookie@0.6.0: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -3310,6 +3325,10 @@ snapshots:
       define-properties: 1.2.1
       gopd: 1.2.0
 
+  goober@2.1.16(csstype@3.1.3):
+    dependencies:
+      csstype: 3.1.3
+
   gopd@1.2.0: {}
 
   graphemer@1.4.0: {}
@@ -3833,6 +3852,13 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
+
+  react-hot-toast@2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      csstype: 3.1.3
+      goober: 2.1.16(csstype@3.1.3)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   react-is@16.13.1: {}
 
