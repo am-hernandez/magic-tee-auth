@@ -1,8 +1,18 @@
 # 🔐 Magic TEE Auth Demo
 
-**Live Demo: [https://magic-tee-auth.vercel.app/](https://magic-tee-auth.vercel.app/)**
-
 A demonstration of Magic's **Trusted Execution Environment (TEE)** for Wallet-as-a-Service, featuring Auth0 authentication, secure wallet creation, and private key export flow.
+
+## 📋 Table of Contents
+
+- [✨ Try the Live Demo](#-try-the-live-demo)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [🚀 Local Development](#-local-development)
+- [⚙️ Service Configuration](#️-service-configuration)
+- [🏗️ Architecture](#️-architecture)
+- [🔑 Key Features](#-key-features)
+- [📚 Learn More](#-learn-more)
+
+---
 
 ## ✨ Try the Live Demo
 
