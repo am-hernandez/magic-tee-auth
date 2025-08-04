@@ -1,61 +1,127 @@
-# Magic TEE + Custom Auth Provider
+# 🔐 Magic TEE Auth Demo
 
-This is a demo of Magic's TEE for WaaS and Auth0 as auth provider built with TypeScript and Next.js. You may replace the auth provider with another provider or use an in-house authentication system.
+**Live Demo: [https://magic-tee-auth.vercel.app/](https://magic-tee-auth.vercel.app/)**
 
-## Setup Instructions
+A demonstration of Magic's **Trusted Execution Environment (TEE)** for Wallet-as-a-Service, featuring Auth0 authentication, secure wallet creation, and private key export flow.
 
-### 1. Install Dependencies
+## ✨ Try the Live Demo
+
+🚀 **[Click here to try it live!](https://magic-tee-auth.vercel.app/)**
+
+**What you can do:**
+
+- 🔑 **Sign in with Auth0** (Google/email)
+- 💰 **Create a Magic TEE wallet** instantly
+- 👁️ **Reveal private keys** securely with RSA encryption
+
+Built with **TypeScript**, **Next.js 15**, **Supabase**, and deployed on **Vercel**.
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 15 with TypeScript & Tailwind CSS
+- **Authentication**: Auth0 (OAuth providers)
+- **Wallet Infrastructure**: Magic TEE API (Trusted Execution Environment)
+- **Database**: Supabase (PostgreSQL)
+- **Blockchain**: Base Sepolia testnet via Alchemy
+- **Deployment**: Vercel with serverless functions
+- **UI/UX**: React Hot Toast, blur privacy mode
+
+## 🚀 Local Development
+
+### 1. Clone & Install
 
 ```bash
+git clone <your-repo-url>
+cd magic-tee-auth
 pnpm install
 ```
 
-### 2. Environment Variables
+### 2. Environment Setup
 
-See [ENVIRONMENT_SETUP.md](./ENVIRONMENT_SETUP.md) for detailed instructions on setting up all required environment variables.
+Copy the example environment file and configure your values:
 
-### 3. Service Setup
+```bash
+cp .env.example .env.local
+# Then edit .env.local with your actual values
+```
 
-**Auth0:**
+### 3. Run Locally
 
-- Create a Regular Web Application
-- Configure callback URLs: `{YOUR_BASE_URL}/api/auth/callback`
-- Configure logout URLs: `http://localhost:3000` ← **Important for logout to work!**
-- Get Client ID, Client Secret, and Domain
-
-**Supabase:**
-
-- Create a Supabase project
-- Run the SQL schema from `supabase-schema.sql`
-- Get Project URL and Service Role Key
-
-**Magic:**
-
-- Sign up at [Magic Dashboard](https://dashboard.magic.link/)
-- Create new app and get Secret Key
-
-**Alchemy:**
-
-- Create app for Base Sepolia testnet
-- Get API key
-
-### 4. Run Development Server
+⚠️ **Before running locally**: Make sure you've updated `AUTH0_BASE_URL` in your `.env.local` to match your local development URL (usually `http://localhost:3000`).
 
 ```bash
 pnpm dev
+# Open http://localhost:3000
 ```
 
-## Project Structure
+## ⚙️ Service Configuration
 
-- **Authentication**: Auth0 integration at `/api/auth/[auth0]`
-- **Wallet Creation**: `/api/wallet/create` - Creates Magic TEE wallets for authenticated users
-- **Transaction Signing**: `/api/wallet/signtransaction` - Signs and sends transactions using Magic TEE
-- **Database**: Supabase (PostgreSQL) stores user wallet metadata
-- **Blockchain**: Base Sepolia testnet via Alchemy RPC
+**Required Services:**
 
-## Wallet Functionality
+- **Auth0**: Regular Web Application for OAuth
+- **Supabase**: PostgreSQL database with provided schema
+- **Magic**: TEE API secret key from dashboard
+- **Alchemy**: Base Sepolia RPC endpoint
 
-The wallet actions can be found in `src/api/wallet/`:
+**Environment Variables Required:**
 
-- `/create` - Creates a new wallet for authenticated users
-- `/signtransaction` - Signs and broadcasts transactions
+```bash
+# Auth0 Configuration
+AUTH0_SECRET=your-secret-32-char-string
+AUTH0_BASE_URL=http://localhost:3000
+AUTH0_ISSUER_BASE_URL=https://your-domain.us.auth0.com
+AUTH0_CLIENT_ID=your-auth0-client-id
+AUTH0_CLIENT_SECRET=your-auth0-client-secret
+
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+
+# Magic TEE Configuration
+MAGIC_SECRET_KEY=sk-live-your-secret-key
+
+# Alchemy Configuration
+ALCHEMY_API_KEY=your-alchemy-api-key
+```
+
+## 🏗️ Architecture
+
+```
+┌─ Frontend (Next.js + TypeScript)
+│  ├─ Auth0 OAuth integration
+│  ├─ Wallet dashboard with privacy controls
+│  └─ Toast notifications & blur mode
+│
+├─ API Routes (/api/wallet/)
+│  ├─ /create - Magic TEE wallet generation
+│  ├─ /signtransaction - Transaction signing
+│  └─ /reveal-private-key - Secure key revelation
+│
+├─ Services
+│  ├─ Auth0 - User authentication
+│  ├─ Magic TEE - Secure wallet operations
+│  ├─ Supabase - User & wallet metadata
+│  └─ Alchemy - Base Sepolia RPC
+│
+└─ Security Features
+   ├─ RSA encryption for private keys
+   ├─ TEE-based key generation
+   └─ Visual privacy controls
+```
+
+## 🔑 Key Features
+
+- **🛡️ Enterprise Security**: Magic's Trusted Execution Environment
+- **🔐 Private Key Revelation**: RSA-encrypted, secure key access
+- **👁️ Privacy Controls**: Blur sensitive data from onlookers
+- **⚡ Instant Wallets**: One-click wallet creation for authenticated users
+- **🌐 Production Ready**: Deployed on Vercel with full TypeScript support
+
+---
+
+## 📚 Learn More
+
+- **[Magic TEE Documentation](https://magic.link/docs)** - Official Magic TEE API docs
+- **[Auth0 Next.js Guide](https://auth0.com/docs/quickstart/webapp/nextjs)** - Auth0 integration
+- **[Supabase Docs](https://supabase.com/docs)** - Database setup and queries
+- **[Vercel Deployment](https://vercel.com/docs)** - Hosting and serverless functions
