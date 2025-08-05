@@ -123,7 +123,7 @@ ALCHEMY_API_KEY=your-alchemy-api-key
 
 ## 📚 Learn More
 
-- **[Magic TEE Documentation](https://magic.link/docs)** - Official Magic TEE API docs
+- **[Magic TEE Documentation](https://tee.express.magiclabs.com/docs)** - Official Magic TEE API docs
 - **[Auth0 Next.js Guide](https://auth0.com/docs/quickstart/webapp/nextjs)** - Auth0 integration
 - **[Supabase Docs](https://supabase.com/docs)** - Database setup and queries
 - **[Vercel Deployment](https://vercel.com/docs)** - Hosting and serverless functions
